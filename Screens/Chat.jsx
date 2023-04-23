@@ -21,10 +21,10 @@ import { useState } from "react";
 const Chat = () => {
   const [showKeyboard, setShowKeyboard] = useState(false);
   useEffect(() => {
-    Keyboard.addListener("keyboardDidShow", (e) => {
+    Keyboard.addListener("keyboardWillShow", (e) => {
       setShowKeyboard(true);
     });
-    Keyboard.addListener("keyboardDidHide", (e) => {
+    Keyboard.addListener("keyboardWillHide", (e) => {
       setShowKeyboard(false);
     });
   }, []);
